@@ -1,29 +1,27 @@
 import java.util.Scanner;
 
-public class binary_recursive{
+public class binary_iterative{
 
     public static int binarySearch(int arr[], int left, int right, int item){
 
-        if (right >= left){
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
 
-            // calculation of new mid
-            int mid = left + (right - left)/2;
-
-            // returns position where found
+            // if item is at mid
             if (arr[mid] == item)
-                return mid+1;
+                return mid;
 
-            // goes to recursive calls in left half
-            if (arr[mid] > item)
-                return binarySearch(arr, left, mid-1, item);
+            // If item greater, ignore left half, consider only right half
+            if (arr[mid] < item)
+                left = mid + 1;
 
-                // goes to recursive calls in right half
+                // If item is smaller, ignore right half, consider only left half
             else
-                return binarySearch(arr, mid+1, right, item);
-        }
-        // if element is not found we return -1
-        else
-            return -1;
+                right = mid - 1;
+    }
+           // if we are able to reach here
+           // means item wasn't present
+           return -1;
     }
     public static void main(String args[]){
 
