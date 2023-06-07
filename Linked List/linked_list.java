@@ -1,3 +1,7 @@
+/*
+A linked list in Java is a linear data structure that we can use in Java Programming Language for storing a large amount of data with ease. The data stored in Linked List is not in a contiguous manner, but each data is stored at a different location, which can be accessed according to one’s need. Linked List is a preferred data structure over arrays, as inserting and deleting data in a linked list is easier than in an array.
+*/
+
 import java.lang.*;
 
 class LinkedList {
